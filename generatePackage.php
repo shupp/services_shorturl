@@ -23,14 +23,14 @@ $packagexml->setSummary('Abstract PHP5 interface for shortening and expanding sh
 $packagexml->setDescription('Short URL services have become enormously popular on the internet. There are, literally, dozens (hundreds?) of these services. Services_ShortURL offers an abstract way of shortening and expanding URLs.');
 
 $packagexml->setChannel('pear.php.net');
-$packagexml->setAPIVersion('0.1.0');
-$packagexml->setReleaseVersion('0.1.0');
+$packagexml->setAPIVersion('0.2.0');
+$packagexml->setReleaseVersion('0.2.0');
 
 $packagexml->setReleaseStability('alpha');
 
 $packagexml->setAPIStability('alpha');
 
-$packagexml->setNotes('* initial release');
+$packagexml->setNotes('* Ken Guest updated the Bitly driver to work with v. 3 of their API, as well as added some validation');
 $packagexml->setPackageType('php');
 $packagexml->addRelease();
 
@@ -50,9 +50,9 @@ $packagexml->addPackageDepWithChannel('required', 'PEAR', 'pear.php.net', '1.4.0
 $packagexml->addPackageDepWithChannel('required', 'HTTP_Request2', 'pear.php.net');
 $packagexml->addPackageDepWithChannel('required', 'Net_URL2', 'pear.php.net',
                                       '0.2.0');
-$packagexml->addExtensionDep('required', 'SimpleXML'); 
-$packagexml->addExtensionDep('required', 'pcre'); 
-$packagexml->addExtensionDep('required', 'SPL'); 
+$packagexml->addExtensionDep('required', 'SimpleXML');
+$packagexml->addExtensionDep('required', 'pcre');
+$packagexml->addExtensionDep('required', 'SPL');
 
 
 $packagexml->generateContents();
