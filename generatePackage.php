@@ -25,14 +25,14 @@ $packagexml->setSummary('Abstract PHP5 interface for shortening and expanding sh
 $packagexml->setDescription('Short URL services have become enormously popular on the internet. There are, literally, dozens (hundreds?) of these services. Services_ShortURL offers an abstract way of shortening and expanding URLs.');
 
 $packagexml->setChannel('pear.php.net');
-$packagexml->setAPIVersion('0.3.0');
-$packagexml->setReleaseVersion('0.3.0');
+$packagexml->setAPIVersion('0.3.1');
+$packagexml->setReleaseVersion('0.3.1');
 
 $packagexml->setReleaseStability('alpha');
 
 $packagexml->setAPIStability('alpha');
 
-$packagexml->setNotes('* Fixes #18184 Added Googl driver from Hideyuki Shimooka');
+$packagexml->setNotes('* Added missing map for Googl driver');
 $packagexml->setPackageType('php');
 $packagexml->addRelease();
 
