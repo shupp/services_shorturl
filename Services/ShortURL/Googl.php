@@ -56,6 +56,8 @@ class Services_ShortURL_Googl
      *
      * @param array  $options The service options array
      * @param object $req     The request object
+     *
+     * @return Services_ShortURL_Googl
      */
     public function __construct(array $options = array(), HTTP_Request2 $req = null)
     {
@@ -67,7 +69,7 @@ class Services_ShortURL_Googl
      *
      * @param string $url The URL to shorten
      *
-     * @throws {@link Services_ShortURL_Exception_CouldNotShorten}
+     * @throws Services_ShortURL_Exception_CouldNotShorten
      * @return string The shortened URL
      */
     public function shorten($url)
@@ -96,7 +98,7 @@ class Services_ShortURL_Googl
      *
      * @param string $url The URL to shorten
      *
-     * @throws {@link Services_ShortURL_Exception_CouldNotExpand}
+     * @throws Services_ShortURL_Exception_CouldNotExpand
      * @return string The shortened URL
      */
     public function expand($url)

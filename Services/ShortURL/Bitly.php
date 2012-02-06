@@ -7,14 +7,14 @@
  *
  * LICENSE: This source file is subject to the New BSD license that is
  * available through the world-wide-web at the following URI:
- * http://www.opensource.org/licenses/bsd-license.php. If you did not receive  
- * a copy of the New BSD License and are unable to obtain it through the web, 
+ * http://www.opensource.org/licenses/bsd-license.php. If you did not receive
+ * a copy of the New BSD License and are unable to obtain it through the web,
  * please send a note to license@php.net so we can mail you a copy immediately.
  *
  * @category  Services
  * @package   Services_ShortURL
- * @author    Joe Stump <joe@joestump.net> 
- * @copyright 2009 Joe Stump <joe@joestump.net> 
+ * @author    Joe Stump <joe@joestump.net>
+ * @copyright 2009 Joe Stump <joe@joestump.net>
  * @license   http://tinyurl.com/new-bsd New BSD License
  * @version   CVS: $Id:$
  * @link      http://pear.php.net/package/Services_ShortURL
@@ -53,13 +53,13 @@ implements Services_ShortURL_Interface
      * Constructor
      *
      * @param array  $options The service options array
-     * @param object $req     The request object 
+     * @param object $req     The request object
      *
-     * @throws {@link Services_ShortURL_Exception_InvalidOptions}
-     * @return void
+     * @throws Services_ShortURL_Exception_InvalidOptions
+     * @return Services_ShortURL_Bitly
      */
-    public function __construct(array $options = array(), 
-                                HTTP_Request2 $req = null) 
+    public function __construct(array $options = array(),
+                                HTTP_Request2 $req = null)
     {
         parent::__construct($options, $req);
 
@@ -84,7 +84,7 @@ implements Services_ShortURL_Interface
      *
      * @param string $url The URL to shorten
      *
-     * @throws {@link Services_ShortURL_Exception_CouldNotShorten}
+     * @throws Services_ShortURL_Exception_CouldNotShorten
      * @return string The shortened URL
      * @see Services_ShortURL_Bitly::sendRequest()
      */
@@ -95,7 +95,7 @@ implements Services_ShortURL_Interface
             'format'  => 'xml',
             'longUrl' => $url,
             'login'   => $this->options['login'],
-            'apiKey'  => $this->options['apiKey']        
+            'apiKey'  => $this->options['apiKey']
         );
         $params = array(
             'version' => 'v3',
@@ -122,7 +122,7 @@ implements Services_ShortURL_Interface
     /**
      * Validate login credentials {@link http://bit.ly}
      *
-     * @throws {@link Services_ShortURL_Exception}
+     * @throws Services_ShortURL_Exception
      * @return boolean True if credentials are valid/work.
      * @see Services_ShortURL_Bitly::sendRequest()
      */
@@ -158,7 +158,7 @@ implements Services_ShortURL_Interface
      *
      * @param string $url The URL to send the request to
      *
-     * @throws {@link Services_ShortURL_Exception_CouldNotShorten}
+     * @throws Services_ShortURL_Exception_CouldNotShorten
      * @return object Instance of SimpleXMLElement
      */
     protected function sendRequest($url)
@@ -166,7 +166,7 @@ implements Services_ShortURL_Interface
         $this->req->setUrl($url);
         $this->req->setMethod('GET');
 
-        $result = $this->req->send(); 
+        $result = $this->req->send();
         if ($result->getStatus() != 200) {
             throw new Services_ShortURL_Exception_CouldNotShorten(
                 'Non-300 code returned', $result->getStatus()

@@ -70,7 +70,7 @@ abstract class Services_ShortURL
      * @param string $service Name of service driver
      * @param array  $options Options for the given service
      *
-     * @throws {@link Services_ShortURL_Exception}
+     * @throws Services_ShortURL_Exception
      * @return object Instance of {@link Services_ShortURL_Interface}
      */
     static public function factory($service, array $options = array())
@@ -137,7 +137,7 @@ abstract class Services_ShortURL
      *
      * @param string $string The string to inspect for short URLs
      *
-     * @throws {@link Services_ShortURL_Exception_CouldNotExpand}
+     * @throws Services_ShortURL_Exception_CouldNotExpand
      * @return array An array keyed by short URL with expanded URL as value
      */
     static public function extract($string)
@@ -199,7 +199,7 @@ abstract class Services_ShortURL
      * Constructor
      *
      * @access private
-     * @return void
+     * @return Services_ShortURL
      */
     final private function __construct()
     {

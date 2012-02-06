@@ -5,16 +5,16 @@
  *
  * PHP version 5.2.0+
  *
- * LICENSE: This source file is subject to the New BSD license that is          
+ * LICENSE: This source file is subject to the New BSD license that is
  * available through the world-wide-web at the following URI:
- * http://www.opensource.org/licenses/bsd-license.php. If you did not receive  
- * a copy of the New BSD License and are unable to obtain it through the web, 
+ * http://www.opensource.org/licenses/bsd-license.php. If you did not receive
+ * a copy of the New BSD License and are unable to obtain it through the web,
  * please send a note to license@php.net so we can mail you a copy immediately.
  *
  * @category  Services
  * @package   Services_ShortURL
- * @author    Joe Stump <joe@joestump.net> 
- * @copyright 2009 Joe Stump <joe@joestump.net> 
+ * @author    Joe Stump <joe@joestump.net>
+ * @copyright 2009 Joe Stump <joe@joestump.net>
  * @license   http://tinyurl.com/new-bsd New BSD License
  * @version   CVS: $Id:$
  * @link      http://pear.php.net/package/Services_ShortURL
@@ -55,7 +55,7 @@ implements Services_ShortURL_Interface
      *
      * @param string $url The URL to shorten
      *
-     * @throws {@link Services_ShortURL_Exception_CouldNotShorten}
+     * @throws Services_ShortURL_Exception_CouldNotShorten
      * @return string The shortened URL
      * @see Services_ShortURL_Shortie::sendRequest()
      */
@@ -88,7 +88,7 @@ implements Services_ShortURL_Interface
      *
      * @param string $url The URL to send the request to
      *
-     * @throws {@link Services_ShortURL_Exception_CouldNotShorten}
+     * @throws Services_ShortURL_Exception_CouldNotShorten
      * @return object Instance of SimpleXMLElement
      */
     protected function sendRequest($url)
@@ -96,7 +96,7 @@ implements Services_ShortURL_Interface
         $this->req->setUrl($url);
         $this->req->setMethod('GET');
 
-        $result = $this->req->send(); 
+        $result = $this->req->send();
         if ($result->getStatus() != 200) {
             throw new Services_ShortURL_Exception_CouldNotExpand(
                 'Non-300 code returned', $result->getStatus()

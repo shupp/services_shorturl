@@ -5,16 +5,16 @@
  *
  * PHP version 5.2.0+
  *
- * LICENSE: This source file is subject to the New BSD license that is          
+ * LICENSE: This source file is subject to the New BSD license that is
  * available through the world-wide-web at the following URI:
- * http://www.opensource.org/licenses/bsd-license.php. If you did not receive  
- * a copy of the New BSD License and are unable to obtain it through the web, 
+ * http://www.opensource.org/licenses/bsd-license.php. If you did not receive
+ * a copy of the New BSD License and are unable to obtain it through the web,
  * please send a note to license@php.net so we can mail you a copy immediately.
  *
  * @category  Services
  * @package   Services_ShortURL
- * @author    Joe Stump <joe@joestump.net> 
- * @copyright 2009 Joe Stump <joe@joestump.net> 
+ * @author    Joe Stump <joe@joestump.net>
+ * @copyright 2009 Joe Stump <joe@joestump.net>
  * @license   http://tinyurl.com/new-bsd New BSD License
  * @version   CVS: $Id:$
  * @link      http://pear.php.net/package/Services_ShortURL
@@ -38,8 +38,8 @@ abstract class Services_ShortURL_Common
     /**
      * Service options
      *
-     * Some services require an API key, username/password, or other 
-     * non-standard information. Those options are set on a per-service 
+     * Some services require an API key, username/password, or other
+     * non-standard information. Those options are set on a per-service
      * basis and passed to the constructor.
      *
      * @var array $options Service options
@@ -62,10 +62,10 @@ abstract class Services_ShortURL_Common
      * @param array  $options Service options
      * @param object $req     Provide your own {@link HTTP_Request2} instance
      *
-     * @return void
+     * @return Services_ShortURL_Common
      */
-    public function __construct(array $options = array(), 
-                                HTTP_Request2 $req = null) 
+    public function __construct(array $options = array(),
+                                HTTP_Request2 $req = null)
     {
         if ($req !== null) {
             $this->accept($req);
@@ -115,7 +115,7 @@ abstract class Services_ShortURL_Common
      *
      * @param string $url The URL to expand
      *
-     * @throws {@link Services_ShortURL_Exception_CouldNotExpand} on non-300's.
+     * @throws Services_ShortURL_Exception_CouldNotExpand on non-300's.
      * @return string $url The expanded URL
      */
     public function expand($url)
@@ -130,7 +130,7 @@ abstract class Services_ShortURL_Common
             );
         }
 
-        return trim($result->getHeader('Location'));       
+        return trim($result->getHeader('Location'));
     }
 
     /**
@@ -138,7 +138,7 @@ abstract class Services_ShortURL_Common
      *
      * @param string $url The short URL to fetch information for
      *
-     * @throws {@link Services_ShortURL_Exception_NotImplemented}
+     * @throws Services_ShortURL_Exception_NotImplemented
      * @return mixed
      */
     public function stats($url)
@@ -153,7 +153,7 @@ abstract class Services_ShortURL_Common
      *
      * @param string $url The short URL to fetch information for
      *
-     * @throws {@link Services_ShortURL_Exception_NotImplemented}
+     * @throws Services_ShortURL_Exception_NotImplemented
      * @return mixed
      */
     public function info($url)
